@@ -1,0 +1,234 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Cheatsheet
+% LaTeX Template
+% Version 1.0 (12/12/15)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Michael Müller (https://github.com/cmichi/latex-template-collection) with
+% extensive modifications by Vel (vel@LaTeXTemplates.com)
+% Other Modifications and Vim cheatsheet by Varun Singh
+%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt]{scrartcl} % 11pt font size
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+
+\usepackage[margin=0pt, landscape]{geometry} % Page margins and orientation
+
+\usepackage{graphicx} % Required for including images
+
+\usepackage{color} % Required for color customization
+\definecolor{mygray}{gray}{.75} % Custom color
+
+\usepackage{url} % Required for the \url command to easily display URLs
+
+\usepackage[ % This block contains information used to annotate the PDF
+colorlinks=false, 
+pdftitle={Cheatsheet}, 
+pdfauthor={John Smith}, 
+pdfsubject={Compilation of useful shortcuts}, 
+pdfkeywords={Random Software, Cheatsheet}
+]{hyperref}
+
+\setlength{\unitlength}{1mm} % Set the length that numerical units are measured in
+\setlength{\parindent}{0pt} % Stop paragraph indentation
+
+\renewcommand{\dots}{\ \dotfill{}\ } % Fills in the right amount of dots
+
+\newcommand{\command}[2]{\textbf{#1}~\dotfill{}~#2\\} % Custom command for adding a shorcut
+
+\newcommand{\sectiontitle}[1]{\paragraph{#1} \ \\} % Custom command for subsection titles
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\begin{picture}(297,210) % Create a container for the page content
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION 
+%----------------------------------------------------------------------------------------
+
+\put(7,200){ % Position on the page to put the title
+\begin{minipage}[t]{210mm} % The size and alignment of the title
+\section*{Cheatsheet -- Varun Singh } % Title
+\end{minipage}
+}
+
+%----------------------------------------------------------------------------------------
+%	FIRST COLUMN SPECIFICATION
+%----------------------------------------------------------------------------------------
+
+\put(7,180){ % Divide the page
+\begin{minipage}[t]{70mm} % Create a box to house text
+
+%----------------------------------------------------------------------------------------
+%	HEADING ONE
+%----------------------------------------------------------------------------------------
+
+\sectiontitle{Cursor Movement}
+%Skips the most basic ones
+\command{w/e}{Jump fd to start/end of the word}
+\command{W/E}{Jump forward with punct.}
+\command{0}{Jump to start of line}
+\command{\^}{First non blank character}
+\command{\$}{Jump to end of line}
+\command{gg}{First line of the document}
+\command{G}{Last line of the document}
+\command{Ngg/NG/:N}{Jump to Nth line}
+\command{fx/Fx}{Jump next/prev occurrence x}
+\command{\}}{Jump to next paragraph/block}
+\command{\{}{Jump to prev paragraph/block}
+\command{Ctrl+b}{Move back one screen}
+\command{Ctrl+f}{Move forward one screen}
+\command{Ctrl+e/y}{Scroll window Down/up}
+\command{H/M/L}{Cursor at top/mid/bottom}
+\command{gi}{Insert at last edit}
+\command{g;}{Cursor at last edit}
+%----------------------------------------------------------------------------------------
+%	HEADING TWO
+%----------------------------------------------------------------------
+\sectiontitle{Editing}
+\command{r}{Replace a single character}
+\command{x}{Delete single character}
+\command{cc/S}{Change entire line}
+\command{xp}{Transpose two letters}
+\command{u/Ctrl+r}{Undo/Redo}
+\command{.}{The Dot Command-repeat last}
+\command{yy}{yank a line}
+\command{dd}{delete a line}
+\command{D}{Delete to the end of the line}
+\command{:retab}{Convert tabs to spaces}
+\command{I}{Insert at the beginning of line}
+\command{A}{Insert at end of line}
+\command{a}{Insert after the cursor}
+\command{ea}{Insert at the end of the word}
+\command{o/O}{Insert line below/above current}
+\command{U/u}{Selected to UPPER/lower case}
+\command{\~}{Tilde - Invert Case}
+
+%----------------------------------------------------------------------------------------
+
+\end{minipage} % End the first column of text
+} % End the first division of the page
+
+%----------------------------------------------------------------------------------------
+%	SECOND COLUMN SPECIFICATION 
+%----------------------------------------------------------------------------------------
+\put(90,180){ % Divide the page
+\begin{minipage}[t]{70mm} % Create a box to house text
+				
+%----------------------------------------------------------------------------------------
+%	HEADING THREE
+%----------------------------------------------------------------------------------------						
+\sectiontitle{Visual \& Marking}
+\command{v}{Select}
+\command{Shift+v}{Select rows}
+\command{Ctrl+v}{Select blocks}
+\command{>/<}{Shift text right/left}
+\command{==}{indent marked line}
+\command{ggVG}{Select entire file}
+\command{m(key)}{Mark position to key}
+\command{`(key)}{To marked position by key}
+\command{:marks}{Show all bookmarks}
+\command{:delm!}{Delete all bookmarks}
+\command{:delm \{key\}}{Delete a bookmark }
+
+%----------------------------------------------------------------------------------------
+%	HEADING FOUR
+%----------------------------------------------------------------------------------------						
+\sectiontitle{Miscellaneous} 
+\command{e}{edit file in new buffer}
+\command{:bn/:bnext}{Go to the next buffer}
+\command{:bp/:bprev}{Go to previous buffer}
+\command{:bd/:bdelete}{Delete buffer}
+\command{:ls}{List buffers}
+\command{:sp filename}{Open new buffer \& split}
+\command{:vsp}{Open and split vertically}
+\command{(C-w)s}{Split window horizontally}
+\command{(C-w)q}{Quit Window}
+\command{(C-w)v}{Split window vertically}
+\command{(C-w)h/j/k/l}{Move across panes}
+\command{(C-w)o}{Close all windows e/p curr.}
+\command{"+y}{Yank selected}
+\command{"+p}{Paste}
+\command{:hardcopy}{Print the file}
+\command{:sort}{Sort selected rows}
+\command{:1,\$d}{Delete entire file}
+\command{:reg}{Show all registers}
+\command{:earlier 2m}{Revert }
+\command{!}{When prefixed - shells out}
+\command{q\{register name\}}{Record macro}
+\command{q}{Stop recording macro}
+\command{@\{reg name\}}{Play macro}
+%---------------------------------------------------------------------
+\end{minipage} % End the second column of text
+} % End the second division of the page
+
+%----------------------------------------------------------------------------------------
+%	THIRD COLUMN SPECIFICATION 
+%----------------------------------------------------------------------------------------
+
+\put(175,180){ % Divide the page
+\begin{minipage}[t]{95mm} % Create a box to house tex
+\command{Ctrl+s}{Stop output to screen}
+\command{Ctrl+q}{Resume output to screen}
+\command{(C-p) / :CtrlP}{Invoke in Find File}
+\command{(C-f)/(C-b)}{Cycle between modes}
+\command{(C-d)}{Filename only}
+%----------------------------------------------------------------------------------------
+%	HEADING FIVE
+%----------------------------------------------------------------------------------------						
+\sectiontitle{Search \& Replace}
+\command{/pattern}{Search for pattern}
+\command{?pattern}{Search backward for pattern}
+\command{n/N}{Repeat search forward/backward}
+\command{:\%s/old/new/g}{Replace all old->new}
+\command{:\%s/old/new/gc}{Replace all confirm}
+\command{:noh/nohl}{No highlighting}
+\command{*}{Search for word under cursor}
+%----------------------------------------------------------------------------------------
+%	HEADING SIX
+%----------------------------------------------------------------------------------------	
+\sectiontitle{Tmux}	
+\command{tmux new -s name}{Start new with session name}
+\command{tmux a -t name}{Attach to named session}
+\command{tmux a/attach}{Attach to session}
+\command{tmux switch -t name}{Swtich to active session name}
+\command{tmux ls/(C-a)s}{List sessions}
+\command{tmux kill-session -t name}{Kill session name}
+\command{killall tmux}{Kill All tmux sessions}
+\command{(C-a)d/:detach}{Detatch from current session}
+\command{(C-a)\$}{Name session}
+\command{(C-a)c}{Create new window}
+\command{(C-a)w}{List all active windows}
+\command{(C-a)[0-9]}{Select window}
+\command{(C-a)\&}{Kill Window}
+\command{(C-a)\%/"}{Vertical Split/Horizontal Split}
+\command{(C-a)q[0-9]}{Show pane numbers \& switch pane}
+\command{(C-a)x}{Kill pane}
+\command{9}{Jump to start of line}
+\command{0}{Jump to start of line}
+\command{0}{Jump to start of line}
+
+%----------------------------------------------------------------------------------------
+
+\end{minipage} % End the third column of text
+} % End the third division of the page
+\end{picture} % End the container for the entire page
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
